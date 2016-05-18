@@ -6,6 +6,7 @@
 密码应该存储在什么地方会比较隐蔽，让有这台机器sudo权限的其他人看不到。（可以不写代码，回答便可）
 
 设置ssh免密码登录，即在本地利用ssh-keygen -t rsa命令生成公钥和私钥，然后将公钥拷贝到需要登录的机器上并将其加入到authorized_keys中并设置600权限。大概命令如下
+
 1. ssh-keygen -t rsa
 2. scp id_rsa.pub root@remote_ip:~/.ssh/
 3. cat id_rsa.pub >> ~/.ssh/authorized_keys
