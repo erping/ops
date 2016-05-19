@@ -3,6 +3,7 @@
 解析ifconfig命令的标准输出，返回一个hash。key是网卡名称 value是对应的ip。
 
 如果确定只有一个网卡，比较好处理，命令如下
+
 echo "eth0 `ifconfig eth0|grep "inet addr"|awk '{print $2}'| awk -F ":" '{print $2}'`" 
 
 如果不确定网卡数量，脚本如下
@@ -20,7 +21,7 @@ echo "eth0 `ifconfig eth0|grep "inet addr"|awk '{print $2}'| awk -F ":" '{print 
 	#tranverse the array and output key value
 	for element in ${!hash[*]}
 	do
-	  echo eth$element:${array[$element]}
+	  echo eth$element:${has[$element]}
 	done 
 
 
