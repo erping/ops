@@ -18,7 +18,7 @@ echo "eth0 `ifconfig eth0|grep "inet addr"|awk '{print $2}'| awk -F ":" '{print 
 	awk '{print $2}'|awk -F ":" '{print $2}'`
 	done 
 	#tranverse the array and output key value
-	for element in ${hash[@]}
+	for element in ${!hash[*]}
 	do
 	  echo eth$element:${array[$element]}
 	done 
