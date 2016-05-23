@@ -2,6 +2,7 @@
 这是一个可以重复调用的服务，不能把bash的io直接绑到tcp上。命令运行完后命令的输出应该能返回到控制机的STDOUT。（考察tcp，多线程等）
 
 建立TCP连接被控端，读取输入后返回输出到STDOUT
+
     import socket
 	s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 	s.connect(('ipaddr',PORT))
